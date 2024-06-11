@@ -1,0 +1,14 @@
+<h2>Emulation</h2>
+{% for flag in pluginResults['emulation'] %}
+    <h4>{{flag.name}}</h4>
+    {% for instruction in flag.take_instructions() %}
+    <div class="{{'red' if flag.is_this_it(instruction) == True else 'body'}}">
+            <div class="row">
+                <div class="column1">{{instruction.address}}</div>
+                <div class="column2">{{instruction.opcodes}}</div>
+                <div class="column3">{{instruction.operation}}</div>
+                <div class="column4">{{instruction.text}}</div>
+            </div>
+        </div>
+    {% endfor %}
+{% endfor %}

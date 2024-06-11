@@ -1,0 +1,9 @@
+<h2>Disassembly</h2>
+{% for instruction in pluginResults['disassembly'] %}
+    <div class="row">
+            <div class="column1">{{instruction.address}}</div>
+            <div class="column2">{{instruction.opcodes}}</div>
+            <div class="column3">{{instruction.operation}}</div>
+            <div class="column4">{{instruction.text}}</div>
+    </div>    
+{% endfor %}
